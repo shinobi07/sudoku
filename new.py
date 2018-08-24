@@ -23,7 +23,7 @@ while True:
         blanks += wor.count('x')
 
     if blanks == 0:
-        print('You won the game!')
+        print('You won the game with %s turns!' % turns)
         break
     else:
         continue
