@@ -2,18 +2,20 @@ import random
 
 grid = []
 
+n = int(input('What size of sudoku (n x n)? n = '))
+
 # create 4x4 grid
-for i in range(6):
-    grid.append(['x']*6)
+for i in range(n):
+    grid.append(['x']*n)
 
 def print_grid(lst):
     for row in lst:
         print(' '.join(row))
 
 # create starting grid
-place_number = [0,1,2,3,4,5]
+place_number = [x for x in range(n)]
 for row in grid:
     place = random.choice(place_number)
-    number = random.randrange(1,7)
+    number = random.randrange(0,n-1)
     row[place] = str(number)
     place_number.remove(place)
